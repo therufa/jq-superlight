@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+ 
+  <button class="add-fun">
+    Add fun
+  </button>
+  <div>
+    <span>
+      Fun count:
+    </span>
+    <span class="fun-counter">0</span>
+  </div>
+  
+
+  <script src="./src/jqsl.js"></script>
+  <script>
+    var funCount = 0
+
+    $('.add-fun').on('click', function() {
+      funCount++
+      
+
+      $('.fun-counter').html(funCount)
+    })
+  </script>
+</body>
+</html>
