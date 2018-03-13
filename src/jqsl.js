@@ -19,11 +19,25 @@
 })(typeof self !== 'undefined' ? self : this, function ($) {
   function Jqsl (selector) {
     this._selector = selector
-    this.matches = document.querySelectorAll(selector)
 
-    this._eventHandlers = {}
+    try {
+      this.matches = document.querySelectorAll(selector)
+    } catch (e) {
+      this.matches = toHtml(selector)
+    }  
 
     return bindToCtx(this.toArray(), this)
+  }
+
+  function isString (val) {
+    return Object.prototype.toString.apply(val) === '[object String]'
+  }
+
+  function toHtml (html) {
+    var template = document.createElement('template')
+    template.innerHTML = html
+
+    return template.content.childNodes
   }
 
   function bindToCtx (matches, ctx) {
@@ -102,6 +116,22 @@
     this.each(function (item) {
       item.innerHTML = content
     })
+  }
+
+  Jqsl.prototype.append = function (item) {
+    var target = item.get ? item.get() : item
+
+    this.get().appendChild(target)
+  }
+
+  Jqsl.prototype.appendTo = function (target) {
+    var ctx = target.get ? target.get() : target
+
+    if (isString(ctx)) {
+      ctx = factory(ctx).get()
+    }
+
+    ctx.appendChild(this.get())
   }
 
   function factory (selector) {
