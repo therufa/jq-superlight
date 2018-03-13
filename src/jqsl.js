@@ -50,7 +50,7 @@
   }
 
   Jqsl.prototype.get = function (pos) {
-    return this.matches.slice(pos)
+    return this.toArray().slice(pos, 1).pop()
   }
 
   Jqsl.prototype.on = function (event, handler) {
@@ -96,6 +96,12 @@
 
   Jqsl.prototype.slice = function (from, to) {
     return this.toArray().slice(from, to)
+  }
+
+  Jqsl.prototype.html = function (content) {
+    this.each(function (item) {
+      item.innerHTML = content
+    })
   }
 
   function factory (selector) {
