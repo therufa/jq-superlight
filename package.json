@@ -1,6 +1,6 @@
 {
   "name": "jq-superlight",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A super lightweight jQuery-like library",
   "main": "src/jqsl.js",
   "scripts": {
