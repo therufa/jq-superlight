@@ -134,6 +134,12 @@
     ctx.appendChild(this.get())
   }
 
+  Jqsl.prototype.remove = function () {
+    this.each(function (item) {
+      item.remove()
+    })
+  }
+
   function factory (selector) {
     return new Jqsl(selector)
   }
