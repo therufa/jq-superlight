@@ -1,0 +1,28 @@
+{
+  "name": "jq-superlight",
+  "version": "1.0.0",
+  "description": "A super lightweight jQuery-like library",
+  "main": "src/jqsl.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/therufa/jq-superlight.git"
+  },
+  "keywords": [
+    "jquery",
+    "light",
+    "lite",
+    "superlight",
+    "superlite",
+    "jq",
+    "jqsl"
+  ],
+  "author": "Attila Max Ruf <therufa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/therufa/jq-superlight/issues"
+  },
+  "homepage": "https://github.com/therufa/jq-superlight#readme"
+}
