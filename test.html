@@ -21,14 +21,11 @@
 
   <script src="./src/jqsl.js"></script>
   <script>
-    var funCount = 0
+    var funCount = 0;
 
     $('.add-fun').on('click', function() {
-      funCount++
-      
-
-      $('.fun-counter').html(funCount)
-    })
+      $('.fun-counter').html(++funCount);
+    });
   </script>
 </body>
 </html>
